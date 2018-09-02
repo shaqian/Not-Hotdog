@@ -1,5 +1,7 @@
 # Not Hotdog
 
+[中文文档](./README-CN.md)
+
 Personal implementation of Jin Yang's [Not Hotdog](https://itunes.apple.com/us/app/not-hotdog/id1212457521) app in HBO's Silicon Valley.
 
 ![seefood](./images/seefood.jpg)
