@@ -1,0 +1,233 @@
+body{
+  background-color: black;
+  color: white;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: sans-serif !important;
+}
+
+@mixin centerX {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+$lightblue: #25d5fd;
+$loaderheight: 160px;
+$borderwidth: 5px;
+
+#loading {
+  @include center;
+  color: $lightblue;
+  text-align: center;
+  width: $loaderheight;
+  height: $loaderheight;
+
+  &:before {
+    @include center;
+    width: 120px;
+    line-height: 25px;
+    text-align: center;
+    content: "Loading model\a"attr(percent)"%";
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: $loaderheight - $borderwidth*2;
+    height: $loaderheight - $borderwidth*2;
+    border-radius: 50%;
+    border: $borderwidth solid $lightblue;
+    border-color: $lightblue transparent $lightblue transparent;
+    animation: lds-dual-ring 2s linear infinite;
+  }
+
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+#webcam {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -100;
+}
+
+#canvas {
+  position: fixed;
+  top: 0;
+}
+
+$height: 160px;
+$offset: 10px;
+
+@mixin prediction($color) {
+  .rect {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: $height/2 - $offset;
+    width: 100%;
+    z-index: -1;
+    background-color: $color;
+    filter: drop-shadow(-2px 1px 0 white)
+            drop-shadow(2px 1px 0 white)
+            drop-shadow(0px -1px 0 white);
+
+    &:before {
+      @include centerX;
+      content: '';
+      height: $height/5*3;
+      width: $height/5*3;
+      top: ($height/2 + $height/5)/2;
+      border-radius: 50%;
+      background: {
+        color: $color;
+        image: url('./dist/images/hotdog.png');
+        size: contain;
+        repeat: no-repeat;
+      }
+    }
+  }
+
+  .cross {
+    display: if($color == red, '', none);
+    position: fixed;
+    top: $height*2/5;
+    left: 50%;
+    transform: translateX(-($height/4+$height/60));
+    filter: drop-shadow(0px 0px 2px black);
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      left: $height/4;
+      height: $height/2;
+      width: $height/30;
+      background-color: white;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .text {
+    height: $height/2 - $offset;
+    line-height: $height/2 - $offset;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5em;
+    color: yellow;
+    -webkit-text-stroke: .03em black;
+    animation: shake .3s cubic-bezier(.17,.67,.68,.24) both;
+    animation-delay: .4s;
+
+    &:after {
+      content: if($color == red, 'Not Hotdog!', 'Hotdog!');
+    }
+  }
+
+  @keyframes shake {
+    60% {
+      transform: scalex(1.3);
+    }
+    80% {
+      transform: scalex(0.8);
+    }
+    90% {
+      transform: scalex(1.1);
+    }
+  }
+}
+
+.nothotdog {
+  @include prediction(red);
+}
+
+.hotdog {
+  @include prediction(lime);
+}
+
+.slide-in {
+  left: 0;
+  transition: transform .5s ease;
+  transform: translateY(-100%);
+
+  &.nothotdog, &.hotdog {
+    transform: translateY(0);
+  }
+}
+
+#getcode {
+  @include centerX;
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  bottom: 80px;
+  background-color: $lightblue;
+  border-radius: 5px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: white; 
+  font-size: 1.2em;
+  text-align: center;
+  text-decoration: none;
+  opacity: .8;
+  transition: opacity .2s;
+
+  &:hover, &:active {
+    opacity: 1;
+  }
+}
+
+#nothanks {
+  @include centerX;
+  bottom: 50px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+#buttongroup {
+  display: none;
+}
+
+#button{
+  @include centerX;
+  display: none;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  background-color: yellow;
+  border-radius: 50%;
+  border: 4px solid black;
+  cursor: pointer;
+  opacity: .8;
+  transition: opacity .2s;
+
+  &:hover, &:active {
+    opacity: .5;
+  }
+}

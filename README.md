@@ -20,6 +20,7 @@ Model trained on:
 * [Building the Model](#Building-the-Model)
 * **[React Native App](https://github.com/shaqian/Not-Hotdog/tree/master/react-native-NotHotdog)**
 * **[Flutter App](https://github.com/shaqian/Not-Hotdog/tree/master/flutter_nothotdog)**
+* **[Javascript PWA](https://github.com/shaqian/Not-Hotdog/tree/master/docs)**
 
 ---
 

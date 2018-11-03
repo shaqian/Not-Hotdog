@@ -14,6 +14,7 @@
 * [建模过程](#建模过程)
 * **[React Native 应用](#React-Native-应用)**
 * **[Flutter 应用](#Flutter-应用)**
+* **[Javascript PWA](#Javascript-PWA)**
 
 ---
 
@@ -199,3 +200,35 @@ flutter run
 
 * 直接安装 flutter_nothotdog 文件夹内的 flutter_hotdog.apk。
 
+## Javascript PWA
+
+### 网址
+
+> 点击预览图片可显示 box 和 score。
+
+https://shaqian.github.io/Not-Hotdog/
+
+### 依赖
+
+* [tfjs](https://github.com/tensorflow/tfjs)
+* [tfjs-yolo](https://github.com/shaqian/tfjs-yolo)
+
+### 运行
+
+#### 安装依赖
+
+```
+npm install
+```
+
+#### 本地开发
+
+```
+npm start
+```
+
+#### 打包
+
+```
+npm run build
+```

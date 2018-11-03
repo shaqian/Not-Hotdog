@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Not Hotdog</title>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <div class="slide-in" id="prediction">
+    <div id="text"></div>
+    <div class="rect"></div>
+    <div class="cross"></div>
+  </div>
+  <video autoplay playsinline muted id="webcam"></video>
+  <div id="loading" percent="0"></div>
+  <div id="button"></div>
+  <div id="buttongroup">
+    <a href="https://github.com/shaqian/Not-Hotdog/tree/master/docs" id="getcode" target="_blank">Get source code</a>
+    <div id="nothanks">No thanks</div>
+  </div>
+  <script type="text/javascript" src="dist/bundle.js"></script>
+</body>
+
+</html>

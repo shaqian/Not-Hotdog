@@ -1,0 +1,29 @@
+{
+  "name": "nothotdog",
+  "version": "1.0.0",
+  "description": "Not Hotdog PWA",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "author": "Qian Sha",
+  "license": "MIT",
+  "devDependencies": {
+    "@tensorflow/tfjs": "^0.13.2",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.0",
+    "node-sass": "^4.9.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "tfjs-yolo": "^0.0.2"
+  }
+}
