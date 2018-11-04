@@ -8,6 +8,8 @@ Detect hotdog in browser with [Tiny YOLO v2](https://pjreddie.com/darknet/yolov2
 
 https://shaqian.github.io/Not-Hotdog/
 
+![demo](../images/pwa_demo.gif)
+
 ## Dependencies
 
 * [tfjs](https://github.com/tensorflow/tfjs)
