@@ -2,7 +2,7 @@
 
 应用开发使用:
 
-* [React Native](https://facebook.github.io/react-native/) | [Flutter](https://flutter.io/)
+* [React Native](https://facebook.github.io/react-native/) | [Flutter](https://flutter.io/) | Javascript
 * [TensorFlow Mobile](https://www.tensorflow.org/mobile/mobile_intro)
 
 模型训练使用:

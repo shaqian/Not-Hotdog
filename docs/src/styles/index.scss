@@ -60,7 +60,7 @@ $borderwidth: 5px;
   }
 }
 
-#webcam {
+#webcam, #canvas {
   position: fixed;
   left: 0;
   top: 0;
@@ -71,8 +71,7 @@ $borderwidth: 5px;
 }
 
 #canvas {
-  position: fixed;
-  top: 0;
+  z-index: 0;
 }
 
 $height: 160px;
@@ -204,6 +203,7 @@ $offset: 10px;
 
 #nothanks {
   @include centerX;
+  font-size: 1.2em;
   bottom: 50px;
   text-decoration: none;
   color: white;
