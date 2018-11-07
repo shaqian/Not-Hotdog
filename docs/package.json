@@ -24,6 +24,6 @@
     "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
-    "tfjs-yolo": "^0.0.2"
+    "tfjs-yolo": "^0.0.3"
   }
 }

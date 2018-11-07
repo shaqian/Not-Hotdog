@@ -85,7 +85,7 @@ async function predict() {
   console.log(`${tf.memory().numTensors} tensors`);
 
   const start = performance.now();
-  boxes = await myYolo(canvas, { numClasses: 1, classNames: ["hotdog"], scoreThreshold: .6 });
+  boxes = await myYolo.predict(canvas, { numClasses: 1, classNames: ["hotdog"], scoreThreshold: .6 });
   const end = performance.now();
 
   console.log(`${end - start} ms`);
